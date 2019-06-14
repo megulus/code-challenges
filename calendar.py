@@ -14,6 +14,23 @@ def translateDayNumber(dayNumber):
   }
   return days[dayNumber]
 
+def translateMonthNumber(monthNumber):
+  months = {
+    1: 'January',
+    2: 'February',
+    3: 'March',
+    4: 'April',
+    5: 'May',
+    6: 'June',
+    7: 'July',
+    8: 'August',
+    9: 'September',
+    10: 'October',
+    11: 'November',
+    12: 'December'
+  }
+  return months[monthNumber]
+
 def isLeapYear(year):
   if year % 4 == 0:
     if year % 100 == 0:
@@ -51,21 +68,21 @@ def countDaysInElapsedMonths(elapsedMonths, year):
 
 def countDaysElapsed(month, day, year):
   yearsElapsed = year - STARTYEAR
-  print('years elapsed ', yearsElapsed)
   monthsElapsed = month - STARTMONTH
-  print('months elapsed ', monthsElapsed)
   daysElapsed = day - STARTDAY
-  print('days elapsed ', daysElapsed)
   daysInElapsedYears = countDaysInElapsedYears(yearsElapsed)
   daysInElapsedMonths = countDaysInElapsedMonths(monthsElapsed, year)
   return daysInElapsedYears + daysInElapsedMonths + daysElapsed
 
+def whatDayOfTheWeekWas(month, day, year):
+  numberOfDaysElapsed = countDaysElapsed(month, day, year)
+  return translateDayNumber(numberOfDaysElapsed % 7)
 
 def main():
-  month = 6
-  day = 14
-  year = 2019
-  print("{0} days elapsded since January 1, 1753.".format(countDaysElapsed(month, day, year)))
+  month = 3
+  day = 24
+  year = 1977
+  print("{0} {1}, {2} is/was/will be a {3}.".format(translateMonthNumber(month), day, year, whatDayOfTheWeekWas(month, day, year)))
 
 if __name__ == "__main__":
   main()
