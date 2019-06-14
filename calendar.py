@@ -1,3 +1,6 @@
+STARTYEAR = 1753
+STARTDAY = 1
+STARTMONTH = 1
 
 def translateDayNumber(dayNumber):
   days = {
@@ -22,17 +25,47 @@ def isLeapYear(year):
       return True
   return False
 
+def countDaysInElapsedYears(elapsedYears):
+  count = 0
+  for i in range(elapsedYears):
+    year = STARTYEAR + i
+    if isLeapYear(year):
+      count += 366
+    else:
+      count += 365
+  return count
+
+def countDaysInElapsedMonths(elapsedMonths, year):
+  count = 0
+  for i in range(elapsedMonths):
+    if i == 1:
+      if isLeapYear(year):
+        count += 29
+      else:
+        count += 28
+    elif i in [3, 5, 8, 10]:
+      count += 30
+    else:
+      count += 31
+  return count
+
 def countDaysElapsed(month, day, year):
-  startMonth = 1
-  startDay = 1
-  startYear = 1753
-  yearsElapsed = year - startYear
-  monthsElapsed = year - startMonth
-  daysElapsed = year - startDay
+  yearsElapsed = year - STARTYEAR
+  print('years elapsed ', yearsElapsed)
+  monthsElapsed = month - STARTMONTH
+  print('months elapsed ', monthsElapsed)
+  daysElapsed = day - STARTDAY
+  print('days elapsed ', daysElapsed)
+  daysInElapsedYears = countDaysInElapsedYears(yearsElapsed)
+  daysInElapsedMonths = countDaysInElapsedMonths(monthsElapsed, year)
+  return daysInElapsedYears + daysInElapsedMonths + daysElapsed
+
 
 def main():
-  year = 2020
-  print("{0} is a leap year: {1}".format(year, isLeapYear(year)))
+  month = 6
+  day = 14
+  year = 2019
+  print("{0} days elapsded since January 1, 1753.".format(countDaysElapsed(month, day, year)))
 
 if __name__ == "__main__":
   main()
