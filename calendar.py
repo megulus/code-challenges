@@ -1,21 +1,7 @@
 STARTYEAR = 1753
 STARTDAY = 1
 STARTMONTH = 1
-
-def translateDayNumber(dayNumber):
-  days = {
-    0: 'Monday',
-    1: 'Tuesday',
-    2: 'Wednesday',
-    3: 'Thursday',
-    4: 'Friday',
-    5: 'Saturday',
-    6: 'Sunday'
-  }
-  return days[dayNumber]
-
-def translateMonthNumber(monthNumber):
-  months = {
+MONTHS = {
     1: 'January',
     2: 'February',
     3: 'March',
@@ -28,8 +14,22 @@ def translateMonthNumber(monthNumber):
     10: 'October',
     11: 'November',
     12: 'December'
-  }
-  return months[monthNumber]
+}
+DAYS = {
+    0: 'Monday',
+    1: 'Tuesday',
+    2: 'Wednesday',
+    3: 'Thursday',
+    4: 'Friday',
+    5: 'Saturday',
+    6: 'Sunday'
+}
+
+def translateDayNumber(dayNumber):
+  return DAYS[dayNumber]
+
+def translateMonthNumber(monthNumber):
+  return MONTHS[monthNumber]
 
 def isLeapYear(year):
   if year % 4 == 0:
