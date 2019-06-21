@@ -1,5 +1,3 @@
-from itertools import cycle
-
 class ArraySpiral(object):
   def __init__(self, matrix):
     self.matrix = matrix
@@ -9,8 +7,8 @@ class ArraySpiral(object):
     self.currentCol = 0
     self.destinationRow = 0
     self.destinationCol = self.columns - 1
-    self.incompleteRows = set([i for i in range(self.rows)])
-    self.incompleteCols = set([j for j in range(self.columns)])
+    self.incompleteRows = set(range(self.rows))
+    self.incompleteCols = set(range(self.columns))
     self.path = ['topRight', 'bottomRight', 'bottomLeft', 'topLeft']
     self.nextIndex = 0
     self.next = self.path[self.nextIndex % 4]
@@ -22,7 +20,7 @@ class ArraySpiral(object):
       self.printContents()
       self.increment()
     self.completeTraversal()
-    if (self.incompleteRows != set() and self.incompleteCols != set()):
+    if (len(self.incompleteRows) > 0 and len(self.incompleteCols) > 0):
       self.setNewDestination()
     else:
       self.printContents()
