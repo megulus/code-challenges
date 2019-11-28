@@ -1,3 +1,11 @@
+"""
+CTCI Problem 1.6
+Implement a method to perform basic string compression using the
+counts of repeated characters. For example, the string 'abbcccccaaa'
+would become 'a1b2c5a3.' If the compressed string would not be
+shorter than the original, return the original string.
+"""
+
 import sys
 
 def compress(my_string): # this is O(n^2) b/c of all of the copies of the string this creates

@@ -1,3 +1,9 @@
+"""
+CTCI Problem 1.8
+Write an algorithm such that if an element in an MxN matrix is 0,
+its entire row and column are set to 0.
+"""
+
 def zerofy_rows_cols(two_d_array):
   if (len(two_d_array)) == 0:
     return two_d_array
