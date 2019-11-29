@@ -20,9 +20,8 @@ def is_palindrome_permutation(my_string):
       else:
         counts[char] = 1
     count_odds = 0
-    for d in my_string:
-      char = d.lower()
-      if counts[char] % 2 != 0:
+    for char, count in counts.items():
+      if count % 2 != 0:
         if len(my_string) % 2 == 0:
           return False
         else:
