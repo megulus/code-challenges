@@ -9,7 +9,7 @@ example:
 Additional Assumptions (my own):
 - If input == '', 0: return ''
 - If input == ' ', 1: return '%20'
-** do this again, in place w/a character array
+** do this in place w/a character array
 """
 
 def urlify(input, length):
