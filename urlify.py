@@ -13,6 +13,7 @@ Additional Assumptions (my own):
 """
 
 def urlify(input, length):
+  input = list(input)
   space_count = 0
   for i in range(length):
     if input[i] == ' ':
@@ -27,10 +28,12 @@ def urlify(input, length):
       input[last_empty - 1] = '2'
       input[last_empty - 2] = '%'
       last_empty -= 3
-  return input
+  return ''.join(input)
 
 def main():
-  print(urlify(['M', 'r', ' ', 'J', 'o', 'h', 'n', ' ', 'S', 'm', 'i', 't', 'h', ' ', ' ', ' ', ' '], 13))
+  str = 'Mr John Smith    '
+  print(urlify(str, 13))
+
 
 if __name__ == "__main__":
   main()
