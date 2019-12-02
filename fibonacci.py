@@ -13,8 +13,8 @@ def fib(n):
 def iterative_fib(n):
   if n == 0:
     return 0
-  # if n == 1:
-  #   return 1
+  if n == 1:
+    return 1
   else:
     two_previous = 0
     one_previous = 1
