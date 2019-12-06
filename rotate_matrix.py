@@ -52,7 +52,6 @@ def main():
     matrix = [['a1', 'b1', 'c1', 'd1', 'a2'], ['d4', 'e1', 'f1', 'e2', 'b2'],
               ['c4', 'f4', 'g1', 'f2', 'c2'], ['b4', 'e4', 'f3', 'e3', 'd2'], ['a4', 'd3', 'c3', 'b3', 'a3']]
     print_matrix(matrix)
-    # print('\n')
     rotate_matrix(matrix)
     print_matrix(matrix)
 
