@@ -1,7 +1,12 @@
 import unittest
+import sys
+import os
 
-import check_permutation
+my_path = '/Users/megdahlgren/src/code-challenges/src/cracking_code_interview'
+sys.path.append(my_path)
+check_permutation = os.path.join(my_path, 'check_permutation.py')
 
+from check_permutation import check_permutation
 class Test(unittest.TestCase):
   str1 = 'grump'
   str2 = 'rpgmu'
