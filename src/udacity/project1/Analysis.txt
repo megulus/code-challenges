@@ -1,0 +1,28 @@
+Definitions:
+n = number of calls
+m = number of texts
+
+Task 0:
+O(1)
+Constant time. The array accesses are O(1).
+
+Task 1:
+O(n + m)
+Linear in the number of calls + texts. We need to look at all text and call records
+to find the unique numbers.
+(see definitions of n/m, above)
+
+Task 2:
+O(n)
+Linear in the number of calls. We need to look at all calls to find the longest,
+but we do not care about the texts in this task.
+
+Task 3:
+O(n)
+Linear in the number of calls. We care about only calls in this task.
+
+Task 4:
+O(n + m)
+Linear in the number of calls + texts - the set accesses (to check whether a 
+number is already in non_candidates, or needs to be removed from candidates)
+are constant time - in Python, sets are implemented as hash tables.

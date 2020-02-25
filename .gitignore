@@ -3,3 +3,4 @@ __pycache__/
 better.py
 .vscode/
 interview_questions/
+*.DS_Store
