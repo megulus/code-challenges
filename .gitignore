@@ -4,3 +4,4 @@ better.py
 .vscode/
 interview_questions/
 *.DS_Store
+.idea
